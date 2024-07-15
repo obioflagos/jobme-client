@@ -21,9 +21,9 @@ const UploadCv = () => {
             {/* <button className="btn btn-info text-white px-3 mt-3 fs-5">
               Upload Your CV
             </button> */}
-            <link to={token ? "/appliedjobs" : "/login"}>
+            <Link to={token ? "/appliedjobs" : "/login"}>
             <MyButton content={"Upload Your CV"} />
-            </link>
+            </Link>
             
           </div>
         </div>
