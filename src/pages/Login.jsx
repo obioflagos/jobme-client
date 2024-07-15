@@ -24,6 +24,7 @@ const Login = () => {
     setIsSubmitting(true)
    
     // Handle form submission
+    data.email = data.email.toLowerCase();
     try {
       const {data: result} = await axios.post(
         "https://jobmeserver.onrender.com/api/v1/login",
