@@ -5,6 +5,7 @@ import { useGlobalContext } from "../hooks/useGlobalContext";
 import axios from "axios";
 
 
+
 const SearchForm = () => {
   const {updateJobType, updateMode, updateIndustry, updateLocation } = useGlobalContext();
   const [locations, setLocations] = useState([])
@@ -36,6 +37,8 @@ const SearchForm = () => {
 
     }
     getLocation();
+
+   
   }, []);
   return (
     <div className="searchform p-3">
