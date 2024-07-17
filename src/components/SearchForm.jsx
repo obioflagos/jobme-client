@@ -8,6 +8,8 @@ import axios from "axios";
 const SearchForm = () => {
   const {updateJobType, updateMode, updateIndustry, updateLocation } = useGlobalContext();
   const [locations, setLocations] = useState([])
+  const [industries, setIndustries] = useState([])
+
   const [jType, setJType] = useState("");
   const [mType, setMType] = useState("")
   const [iType,  setIType] =useState("")
@@ -30,6 +32,7 @@ const SearchForm = () => {
     const getLocation = async () => {
       const {data} = await axios("https://jobmeserver.onrender.com/api/v1/jobs/locations");
       setLocations(data.location);
+      setIndustries(data.industries);
 
     }
     getLocation();
@@ -63,7 +66,7 @@ const SearchForm = () => {
             onChange={(e) => setIType(e.target.value)}
           >
             <option value="">Select Industry</option>
-            {industry.map((type, i) => {
+            {industries && industries.map((type, i) => {
               return (
                 <option key={i} value={type}>
                   {" "}
